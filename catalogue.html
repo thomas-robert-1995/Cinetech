@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="catalogue.css">
+
 </head>
 <body>
+  <header class="bg-dark text-white py-3">
+    <div class="container d-flex justify-content-end align-items-center bg-transparent">
+        <div class="dropdown">
+            <input type="text" id="searchBar" class="form-control" placeholder="Rechercher..." data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="dropdown-menu w-100" id="autocompleteResults"></ul>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid bg-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
 
     <div id="filters">
         <button onclick="loadMovies()">Tout les films</button>
@@ -14,5 +31,22 @@
       <div id="grid-container" class="grid"></div>
       
     <script src="catalogue.js"></script>
+    <script src="js/accueil.js"></script>
+    <script src="js/autocomplete.js"></script>
+
+    <!-- Footer -->
+    <footer class="py-3 mt-auto bg-dark text-white">
+      <div class="container d-flex justify-content-between align-items-center bg-dark">
+          <div>
+              <img src="assets/TNTLOGO.png" alt="Logo Cinetech" style="height: 80px;">
+          </div>
+          <div>
+              <a href="/index.html" class="text-white text-decoration-none me-3">Accueil</a>
+              <a href="/catalogue.html" class="text-white text-decoration-none me-3">Mes films/Séries</a>
+              <a href="#" class="text-white text-decoration-none me-3">Détails</a>
+              <a href="#" class="text-white text-decoration-none">Mes favoris</a>
+          </div>
+      </div>
+  </footer> 
 </body>
 </html>
