@@ -34,7 +34,9 @@ body {
   button:hover {
     background: white;
     color: black;
-  }
+ 
+  
+
   
    header {
     padding: 20px;
@@ -69,4 +71,4 @@ body {
     .menu-vertical a:hover {
       font-weight: bold;
     }
-  
+
