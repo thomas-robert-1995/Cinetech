@@ -35,4 +35,26 @@ body {
     background: white;
     color: black;
   }
+
+    /* Barre latérale gauche */
+    .menu-vertical {
+      width: 140px;
+      height: 100vh;
+      background-color: #000000; /* Couleur à changer si besoin */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 30px;
+    }
+    
+    .menu-vertical a {
+      text-decoration: none;
+      color: black;
+      margin: 20px 0;
+      font-size: 12px;
+    }
+    
+    .menu-vertical a:hover {
+      font-weight: bold;
+    }
   

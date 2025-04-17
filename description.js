@@ -1,4 +1,5 @@
 const API_KEY = "8c4b867188ee47a1d4e40854b27391ec";
+const BASE_URL = "https://api.themoviedb.org/3";
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 const type = urlParams.get("type"); // "movie" ou "tv"
@@ -11,14 +12,20 @@ async function loadDetails() {
   }
 
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}&language=fr-FR`);
-    if (!response.ok) {
+    // Appels fetch parallèles pour les détails et les crédits
+    const [detailsRes, creditsRes] = await Promise.all([
+      fetch(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=fr-FR`),
+      fetch(`${BASE_URL}/${type}/${id}/credits?api_key=${API_KEY}&language=fr-FR`)
+    ]);
+
+    if (!detailsRes.ok || !creditsRes.ok) {
       throw new Error("Erreur lors de la récupération des données.");
     }
 
-    const data = await response.json();
+    const data = await detailsRes.json();
+    const credits = await creditsRes.json();
 
-    // Affiche l'image principale
+    // Image principale
     const banner = document.getElementById("banner");
     if (data.backdrop_path || data.poster_path) {
       banner.src = `https://image.tmdb.org/t/p/original${data.backdrop_path || data.poster_path}`;
@@ -27,20 +34,20 @@ async function loadDetails() {
       banner.alt = "Image non disponible";
     }
 
-    // Partie explication
+    // Durée, langues, pays
     const duration = type === "movie" ? `${data.runtime || "??"} minutes` : `${data.episode_run_time?.[0] || "??"} min (épisode)`;
-
-    // Langues disponibles
     const languages = data.spoken_languages?.map(lang => lang.name).join(", ") || "Non spécifiées";
-
-    // Pays de production
     const countries = data.production_countries?.map(c => c.name).join(", ") || "Non spécifiés";
+
+    // Acteurs principaux (limité à 5)
+    const topCast = credits.cast?.slice(0, 5).map(actor => actor.name).join(", ") || "Non spécifiés";
 
     document.getElementById("details").innerHTML = `
       Durée : ${duration}<br/>
       Langues disponibles : ${languages}<br/>
       Qualité : 1080p<br/>
       Pays de production : ${countries}<br/>
+      Acteurs principaux : ${topCast}<br/>
     `;
 
     // Synopsis
