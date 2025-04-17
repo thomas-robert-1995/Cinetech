@@ -7,7 +7,7 @@ body {
   .menu-vertical {
     width: 140px;
     height: 100vh;
-    background-color: #0000; /* Couleur à changer si besoin */
+    background-color: #000000; /* Couleur à changer si besoin */
     display: flex;
     flex-direction: column;
     align-items: center;

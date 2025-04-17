@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
     <title>TNT MOVIE</title>
 
->>>>>>> main
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Menu Burger avec Recherche</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animation.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
     <!-- Header burger + barre de recherche -->
-    <header class="bg-dark text-white py-3">
+    <header class="text-white py-3">
         <div class="container d-flex justify-content-end align-items-center bg-transparent">
             <div class="dropdown">
                 <input type="text" id="searchBar" class="form-control" placeholder="Rechercher..." data-bs-toggle="dropdown" aria-expanded="false">
@@ -22,14 +19,22 @@
             </div>
         </div>
 
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid bg-dark">
+        <nav class="navbar  ">
+            <div class="container-fluid ">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
         </nav>
     </header>
+
+    <div id="introAnimation">
+        <div class="logo-container">
+            <img src="assets/TNTLOGO.png" alt="TNT Movie Logo" id="logo">
+        </div>
+        <audio id="introSound" src="assets/intro.mp3"></audio> <!-- N'oublie pas d'ajouter le fichier audio -->
+    </div>
+
 
     <section class="suggestion-section text-center my-5">
         <div class="suggestion-title">Suggestion du moment</div>
@@ -49,7 +54,7 @@
     </section>
 
     <!-- Burger -->
-    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas offcanvas-start  text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
         <div class="offcanvas-header bg-transparent">
             <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -73,8 +78,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="py-3 mt-auto bg-dark text-white">
-        <div class="container d-flex justify-content-between align-items-center bg-dark">
+    <footer class="py-3 mt-auto  text-white">
+        <div class="container d-flex justify-content-between align-items-center ">
             <div>
                 <img src="assets/TNTLOGO.png" alt="Logo Cinetech" style="height: 80px;">
             </div>
@@ -90,5 +95,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/accueil.js"></script>
     <script src="js/autocomplete.js"></script>
+    <script src="/js/animation.js"></script> 
 </body>
 </html>
