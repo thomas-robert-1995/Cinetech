@@ -2,7 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/catalogue.css">
+  <link rel="stylesheet" href="/css/catalogue.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
   <header class="bg-dark text-white py-3">
@@ -29,7 +32,8 @@
       
       <div id="grid-container" class="grid"></div>
       
-      <footer class="py-3 mt-auto  text-white">
+      <!-- Footer -->
+    <footer class="py-3 mt-auto  text-white">
         <div class="container d-flex justify-content-between align-items-center ">
             <div>
                 <img src="assets/TNTLOGO.png" alt="Logo Cinetech" style="height: 80px;">
@@ -44,22 +48,9 @@
     </footer>
       
     <script src="/js/catalogue.js"></script>
-    <script src="js/accueil.js"></script>
-    <script src="js/autocomplete.js"></script>
+    <script src="/js/accueil.js"></script>
+    <script src="/js/autocomplete.js"></script>
 
-    <!-- Footer -->
-    <footer class="py-3 mt-auto bg-dark text-white">
-      <div class="container d-flex justify-content-between align-items-center bg-dark">
-          <div>
-              <img src="assets/TNTLOGO.png" alt="Logo Cinetech" style="height: 80px;">
-          </div>
-          <div>
-              <a href="/index.html" class="text-white text-decoration-none me-3">Accueil</a>
-              <a href="/catalogue.html" class="text-white text-decoration-none me-3">Mes films/Séries</a>
-              <a href="#" class="text-white text-decoration-none me-3">Détails</a>
-              <a href="#" class="text-white text-decoration-none">Mes favoris</a>
-          </div>
-      </div>
-  </footer> 
+
 </body>
 </html>
