@@ -74,3 +74,13 @@ body {
       font-weight: bold;
     }
 
+
+    h2 {
+      border: 1px solid white;
+      border-radius: 20px;
+      display: inline-block;
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      background-color: transparent;
+    }
