@@ -55,7 +55,25 @@ h2 {
   .movie-list, .series-list {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
+  }
+  
+  .movie-list .item, .series-list .item {
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+  }
+
+  .movie-list .item img, .series-list .item img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .movie-list .item img:hover, .series-list .item img:hover {
+    transform: scale(1.05);
   }
   
   .movie-list .movie, .series-list .series {
@@ -82,4 +100,3 @@ h2 {
       width: 90%;
     }
   }
-  
