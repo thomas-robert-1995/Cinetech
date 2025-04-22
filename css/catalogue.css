@@ -36,7 +36,10 @@ body {
     color: black;
   }
   
-
+  .navbar-toggler-icon{
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
   
   header {
     display: flex;

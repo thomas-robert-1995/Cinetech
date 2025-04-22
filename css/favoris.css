@@ -33,3 +33,8 @@ footer a:hover {
 .container1{
   background-color: #222222!important;
 }
+
+.navbar-toggler-icon{
+  background-color: #ffffff;
+  border-radius: 20px;
+}
