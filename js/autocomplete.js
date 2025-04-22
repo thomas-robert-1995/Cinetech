@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 li.classList.add("dropdown-item");
                 li.textContent = movie.title;
                 li.addEventListener("click", () => {
-                    searchBar.value = movie.title;
-                    resultsList.innerHTML = "";
+                    // Redirection vers la page de description avec l'ID et le type du film
+                    window.location.href = `description.html?id=${movie.id}&type=movie`;
                 });
                 resultsList.appendChild(li);
             });
