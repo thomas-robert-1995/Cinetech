@@ -1,5 +1,5 @@
 body {
-    background-color: #222222;
+    background-color: #222222!important;
     color: white;
     font-family: sans-serif;
     margin: 0;
@@ -38,7 +38,8 @@ body {
   
 
   
-   header {
+  header {
+    display: flex;
     padding: 20px;
     text-align: center;
     background-color: #000000;
@@ -49,6 +50,7 @@ body {
     background-color: #000000;
    
   }
+  
 
     /* Barre latérale gauche */
     .menu-vertical {

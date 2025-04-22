@@ -3,8 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/description.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
+  <!-- Header burger + barre de recherche -->
+  <header class="text-white py-3">
+    <nav class="navbar  ">
+        <div class="container-fluid ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+     <!-- Burger -->
+ <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header ">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body bg-transparent">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/catalogue.html">Mes films / séries</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/description.html">Détails</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/favoris.html">Mes favoris</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <div class="container d-flex justify-content-end align-items-center bg-transparent">
+        <div class="dropdown">
+            <input type="text" id="searchBar" class="form-control" placeholder="Rechercher..." data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="dropdown-menu w-100" id="autocompleteResults"></ul>
+        </div>
+    </div>
+
+  
+     
+</header>
 
     <div id="detail-container">
         <img id="banner" src="" alt="Poster" />
@@ -36,6 +81,20 @@
             <!-- Les commentaires seront affichés ici -->
         </div>
     </div>
+     <!-- Footer -->
+     <footer class="py-3 mt-auto  text-white">
+      <div class="container d-flex justify-content-between align-items-center ">
+          <div>
+              <img src="assets/TNTLOGO.png" alt="Logo Cinetech" style="height: 80px;">
+          </div>
+          <div>
+              <a href="/index.html" class="text-white text-decoration-none me-3">Accueil</a>
+              <a href="/catalogue.html" class="text-white text-decoration-none me-3">Mes films/Séries</a>
+              <a href="/description.html" class="text-white text-decoration-none me-3">Détails</a>
+              <a href="/favoris.html" class="text-white text-decoration-none">Mes favoris</a>
+          </div>
+      </div>
+  </footer>
       
     <script src="js/description.js"></script>
     <script src="js/commentaire.js"></script>

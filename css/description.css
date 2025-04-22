@@ -1,7 +1,7 @@
 /* css/description.css */
 
 body {
-  background-color: #121212;
+  background-color: #121212!important;
   color: #f0f0f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -46,15 +46,7 @@ p {
   line-height: 1.6;
 }
 
-/* Section Commentaires améliorée */
-.container {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: #1f1f1f;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
+
 
 .container h3 {
   color: #ffffff;
@@ -148,4 +140,17 @@ textarea.form-control:focus {
   font-size: 0.9rem;
   text-align: center;
   margin-top: 0.5rem;
+}
+
+header {
+  display: flex;
+  padding: 20px;
+  text-align: center;
+  background-color: #000000;
+}
+
+footer {
+
+  background-color: #000000;
+ 
 }
