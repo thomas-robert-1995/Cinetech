@@ -98,3 +98,35 @@ async function loadSuggestions() {
 }
 
 loadDetails();
+
+document.getElementById("add-to-favorites").addEventListener("click", async () => {
+    try {
+        const res = await fetch(`${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=fr-FR`);
+        if (!res.ok) throw new Error("Impossible de récupérer les infos pour favoris.");
+        const data = await res.json();
+
+        const favoris = JSON.parse(localStorage.getItem("favoris")) || [];
+
+        // Vérifie si déjà en favoris
+        const existeDeja = favoris.some(item => item.id === data.id && item.type === type);
+        if (existeDeja) {
+            alert("Ce contenu est déjà dans vos favoris !");
+            return;
+        }
+
+        const item = {
+            id: data.id,
+            type: type,
+            title: data.title || data.name,
+            poster: data.poster_path || data.backdrop_path || ""
+        };
+
+        favoris.push(item);
+        localStorage.setItem("favoris", JSON.stringify(favoris));
+        alert("Ajouté aux favoris !");
+    } catch (err) {
+        console.error(err);
+        alert("Erreur lors de l'ajout aux favoris.");
+    }
+});
+
